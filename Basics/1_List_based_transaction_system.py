@@ -1,6 +1,27 @@
 balance = 0
 transactions = []
+password = "@Kai"
 
+while True:
+    passw = input("Enter your password to access the transaction system: ")
+    if passw == password:
+        print("Access granted.")
+        break
+    else:
+        print("Incorrect password. 2 Attempts remaining.")
+    passw = input("Enter your password to access the transaction system: ")
+    if passw == password:
+        print("Access granted.")
+        break
+    else:
+        print("Incorrect password. 1 Attempt remaining.")
+    passw = input("Enter your password to access the transaction system: ")
+    if passw == password:
+        print("Access granted.")
+        break
+    else:
+        print("Access denied. Exiting the system.")
+        exit()
 while True:
     print("\nMenu:")
     print("1. Deposit")
