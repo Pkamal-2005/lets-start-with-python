@@ -1,6 +1,6 @@
 balance = 0
 transactions = []
-password = "@Kai"
+password = "@Kai" 
 
 while True:
     passw = input("Enter your password to access the transaction system: ")
