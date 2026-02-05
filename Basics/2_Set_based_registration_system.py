@@ -2,12 +2,12 @@ registered = set()
 entered = set()
 
 while True:
-    choice = input("1:Register  2:Enter  3:Total  4:Exit -> ")
+    choice = input("1:Register User  2:Enter User  3:Total Users  4:Exit -> ")
 
     if choice == "1":
         name = input("Name: ").strip()
         if name in registered:
-            print("Already registered")
+            print("The user is already registered")
         else:
             registered.add(name)
             print("Registered")
