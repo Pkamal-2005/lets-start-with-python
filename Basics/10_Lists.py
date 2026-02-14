@@ -199,7 +199,6 @@ print(thislist)
 # Append Items
 # To add an item to the end of the list, use the append() method:
 
-# ExampleGet your own Python Server
 # Using the append() method to append an item:
 
 thislist = ["apple", "banana", "cherry"]
@@ -303,7 +302,6 @@ print(thislist)
 # Loop Through a List
 # You can loop through the list items by using a for loop:
 
-# ExampleGet your own Python Server
 # Print all items in the list, one by one:
 
 thislist = ["apple", "banana", "cherry"]
@@ -359,7 +357,6 @@ thislist = ["apple", "banana", "cherry"]
 
 # Without list comprehension you will have to write a for statement with a conditional test inside:
 
-# ExampleGet your own Python Server
 fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
 newlist = []
 
@@ -436,7 +433,6 @@ newlist = [x for x in fruits]
 # Sort List Alphanumerically
 # List objects have a sort() method that will sort the list alphanumerically, ascending, by default:
 
-# ExampleGet your own Python Server
 # Sort the list alphabetically:
 
 # thislist = ["orange", "mango", "kiwi", "pineapple", "banana"]
@@ -463,8 +459,6 @@ newlist = [x for x in fruits]
 # thislist = [100, 50, 65, 82, 23]
 # thislist.sort(reverse = True)
 # print(thislist)
-# ADVERTISEMENT
-# REMOVE ADS
 
 # Customize Sort Function
 # You can also customize your own function by using the keyword argument key = function.
@@ -499,8 +493,7 @@ newlist = [x for x in fruits]
 # thislist = ["banana", "Orange", "Kiwi", "cherry"]
 # thislist.sort(key = str.lower)
 # print(thislist)
-# ADVERTISEMENT
-# REMOVE ADS
+
 
 # Reverse Order
 # What if you want to reverse the order of a list, regardless of the alphabet?
@@ -520,7 +513,6 @@ newlist = [x for x in fruits]
 # Use the copy() method
 # You can use the built-in List method copy() to copy a list.
 
-# ExampleGet your own Python Server
 # Make a copy of a list with the copy() method:
 
 # thislist = ["apple", "banana", "cherry"]
@@ -551,7 +543,6 @@ newlist = [x for x in fruits]
 
 # One of the easiest ways are by using the + operator.
 
-# ExampleGet your own Python Server
 # Join two list:
 
 # list1 = ["a", "b", "c"]
