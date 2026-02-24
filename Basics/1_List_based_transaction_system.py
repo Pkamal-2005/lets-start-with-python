@@ -1,63 +1,64 @@
 balance = 0
 transactions = []
-password = "@Kai" 
+password = "@Kai"
 
-while True:
-    passw = input("Enter your password to access the transaction system: ")
-    if passw == password:
-        print("Access granted.")
-        break
-    else:
-        print("Incorrect password. 2 Attempts remaining.")
-    passw = input("Enter your password to access the transaction system: ")
-    if passw == password:
-        print("Access granted.")
-        break
-    else:
-        print("Incorrect password. 1 Attempt remaining.")
-    passw = input("Enter your password to access the transaction system: ")
-    if passw == password:
-        print("Access granted.")
-        break
-    else:
-        print("Access denied. Exiting the system.")
-        exit()
-while True:
-    print("\nMenu:")
-    print("1. Deposit")
-    print("2. Withdraw")
-    print("3. Check Balance")
-    print("4. View Transactions")
-    print("5. Exit")
-    choice = input("Choose an option (1-5): ")
+def check_password():
+    for i in range(3):
+        p = input("Enter password: ")
+        if p == password:
+            print("Access granted.")
+            return True
+        else:
+            print(f"Incorrect password. {2-i} attempts remaining.")
+    print("Access denied.")
+    return False
 
-    if choice == '1':
-        amount = float(input("Enter deposit amount: "))
-        if amount > 0:
-            balance += amount
-            transactions.append(f"Deposited: Rs.{amount:.2f}")
-            print(f"Rs.{amount:.2f} deposited successfully.")
-        else:
-            print("Invalid amount. Please enter a positive number.")
-    elif choice == '2':
-        amount = float(input("Enter withdrawal amount: "))
-        if 0 < amount <= balance:
-            balance -= amount
-            transactions.append(f"Withdrew: Rs.{amount:.2f}")
-            print(f"Rs{amount:.2f} withdrawn successfully.")
-        else:
-            print("Invalid amount. Please enter a positive number not exceeding your balance.")
-    elif choice == '3':
-        print(f"Current balance: Rs.{balance:.2f}")
-    elif choice == '4':
-        if transactions:
-            print("Transaction History:")
-            for transaction in transactions:
-                print(transaction)
-        else:
-            print("No transactions yet.")
-    elif choice == '5':
-        print("Exiting the system. 안녕히 가세요!")
-        break
+def deposit():
+    global balance
+    amt = float(input("Enter deposit amount: "))
+    if amt > 0:
+        balance += amt
+        transactions.append(f"Deposited: Rs.{amt:.2f}")
+        print("Amount deposited.")
     else:
-        print("Invalid choice. Please select a valid option.")
+        print("Invalid amount.")
+
+def withdraw():
+    global balance
+    amt = float(input("Enter withdrawal amount: "))
+    if 0 < amt <= balance:
+        balance -= amt
+        transactions.append(f"Withdrew: Rs.{amt:.2f}")
+        print("Amount withdrawn.")
+    else:
+        print("Invalid amount.")
+
+def check_balance():
+    print(f"Current balance: Rs.{balance:.2f}")
+
+def view_transactions():
+    if transactions:
+        for t in transactions:
+            print(t)
+    else:
+        print("No transactions yet.")
+
+# Main Program
+if check_password():
+    while True:
+        print("\n1.Deposit  2.Withdraw  3.Balance  4.Transactions  5.Exit")
+        choice = input("Choose: ")
+
+        if choice == '1':
+            deposit()
+        elif choice == '2':
+            withdraw()
+        elif choice == '3':
+            check_balance()
+        elif choice == '4':
+            view_transactions()
+        elif choice == '5':
+            print("Exiting system. 안녕히 가세요!")
+            break
+        else:
+            print("Invalid choice.")
